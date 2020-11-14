@@ -21,7 +21,16 @@ HTMLActuator.prototype.actuate = function (grid, metadata) {
 
   var classes = ["tile", "tile-bird"];
 
-       if (Math.pow(2, metadata.score) > 2097152) classes.push("tile-4194304")
+       if (Math.pow(2, metadata.score) > 1073741824) classes.push("tile-2147483648")
+  else if (Math.pow(2, metadata.score) > 536870912) classes.push("tile-1073741824")
+  else if (Math.pow(2, metadata.score) > 268435456) classes.push("tile-536870912")
+  else if (Math.pow(2, metadata.score) > 134217728) classes.push("tile-268435456")
+  else if (Math.pow(2, metadata.score) > 67108864) classes.push("tile-134217728")
+  else if (Math.pow(2, metadata.score) > 33554432) classes.push("tile-67108864")
+  else if (Math.pow(2, metadata.score) > 16777216) classes.push("tile-33554432")
+  else if (Math.pow(2, metadata.score) > 8388608) classes.push("tile-16777216")
+  else if (Math.pow(2, metadata.score) > 4194304) classes.push("tile-8388608")
+  else if (Math.pow(2, metadata.score) > 2097152) classes.push("tile-4194304")
   else if (Math.pow(2, metadata.score) > 1048576) classes.push("tile-2097152")
   else if (Math.pow(2, metadata.score) > 524288) classes.push("tile-1048576")
   else if (Math.pow(2, metadata.score) > 262144) classes.push("tile-524288")
